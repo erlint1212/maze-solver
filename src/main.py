@@ -1,5 +1,6 @@
 from graphics import *
 from cell import *
+from maze import *
 
 def main():
     win = Window(800, 600)
@@ -24,6 +25,15 @@ def main():
     cell2.draw()
     cell1.draw_move(cell2)
     #win.draw_line(line, "red")
+    maze1 = Maze(
+        100,
+        100,
+        4,
+        4,
+        100,
+        100,
+        win
+    )
     win.wait_for_close()
 
 
