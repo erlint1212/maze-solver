@@ -29,16 +29,16 @@ class Cell:
         point21 = Point(self._x2, self._y1)
         point22 = Point(self._x2, self._y2)
         line_list = []
-        if self.has_left_wall:
-            line_list.append(Line(point11, point12))
-        if self.has_right_wall:
-            line_list.append(Line(point21, point22))
-        if self.has_top_wall:
-            line_list.append(Line(point11, point21))
-        if self.has_bottom_wall:
-            line_list.append(Line(point12, point22))
-        for l in line_list:
-            self._win.draw_line(l)
+        walls = [self.has_left_wall, self.has_right_wall, self.has_top_wall, self.has_bottom_wall]
+        line_list.append(Line(point11, point12))
+        line_list.append(Line(point21, point22))
+        line_list.append(Line(point11, point21))
+        line_list.append(Line(point12, point22))
+        for i, l in enumerate(line_list):
+            if walls[i]: 
+                self._win.draw_line(l)
+            else:
+                self._win.draw_line(l, "white")
 
     def draw_move(self, to_cell, undo=False):
         fill_color = "gray"
