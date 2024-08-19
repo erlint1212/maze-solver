@@ -34,6 +34,7 @@ def main():
         100,
         win
     )
+    print(maze1._cells[0][0].has_top_wall,maze1._cells[0][0].has_bottom_wall, maze1._cells[0][0].has_right_wall, maze1._cells[0][0].has_left_wall)
     win.wait_for_close()
 
 
