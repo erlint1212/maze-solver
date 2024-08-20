@@ -4,6 +4,7 @@ from maze import *
 
 def main():
     win = Window(800, 600)
+    """
     point1 = Point(200, 200)
     point2 = Point(400, 400)
     line = Line(point1, point2)
@@ -24,17 +25,19 @@ def main():
     cell1.draw()
     cell2.draw()
     cell1.draw_move(cell2)
+    """
     #win.draw_line(line, "red")
     maze1 = Maze(
-        100,
-        100,
-        4,
-        4,
-        100,
-        100,
-        win
+        0,
+        0,
+        20,
+        20,
+        30,
+        30,
+        win,
+        1
     )
-    print(maze1._cells[0][0].has_top_wall,maze1._cells[0][0].has_bottom_wall, maze1._cells[0][0].has_right_wall, maze1._cells[0][0].has_left_wall)
+    maze1.solve()
     win.wait_for_close()
 
 
